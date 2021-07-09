@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "d480ecf6-b237-4254-a7ae-9162642f77cf",
+		"name": "score_ranking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete-score",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/player/delete-score",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"player",
+						"delete-score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "score-by-id",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/player/score-list",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"player",
+						"score-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert-score",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"players\":\n    { \n        \"player_name\": \"chan myae aung\",\n        \"score\": 10,\n        \"score_time\": \"08/24/2009\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/scores/insert-score?=",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"scores",
+						"insert-score"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "score-list",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filters\":\n    {\n        \"page\": 1,\n        \"limit\": 5,\n        \"dateFrom\": \"2021-12-11 11:21:11\",\n        \"dateTo\": \"2021-12-12 11:21:11\",\n        \"players\": [\"CHAN myae\"]\n     }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/scores/score-list",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"scores",
+						"score-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "player-history",
+			"request": {
+				"auth": {
+					"type": "apikey"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"player\": \"chan myae aung\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/scores/player-history",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"scores",
+						"player-history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
